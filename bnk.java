@@ -33,10 +33,10 @@ class Acc{
                 a[i].get();
                 check = true;
             }
-       }
+        }
        if(check == false){
             System.out.println("Account Number is invalid :( ");
-       }
+        }
        System.out.println();
     }
 
@@ -58,7 +58,37 @@ class Acc{
     }
 
     void case3(Acc [] a){
-        
+        System.out.println("Enter Account owner's name : ");
+        String sname = sc.nextLine();
+        boolean check = false;
+       
+       for(int i = 0; i < a.length; i++){
+            if(a[i].aname.equalsIgnoreCase(sname)){
+                a[i].get();
+                check = true;
+            }
+        }
+       if(check == false){
+            System.out.println("Account Owner's name is invalid :( ");
+        }
+       System.out.println();
+    }
+
+    void case4(Acc [] a){
+        System.out.println("Enter First char of Account owner/s");
+        char schar = sc.next().toUpperCase().charAt(0);
+        boolean check = false;
+       
+        for(int i = 0; i < a.length; i++){
+            if(schar == a[i].aname.toUpperCase().charAt(0)){
+                a[i].get();
+                check = true;
+            }
+        }
+        if(check == false){
+            System.out.println("Account Owner's name not found :( ");
+        }
+        System.out.println();
     }
 }
 
