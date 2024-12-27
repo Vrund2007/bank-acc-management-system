@@ -90,6 +90,52 @@ class Acc{
         }
         System.out.println();
     }
+
+    void case5(Acc [] a){
+        System.out.print("Enter Account Number : ");
+        int sno = sc.nextInt();
+        System.out.print("Enter Amount to be deposit : ");
+        int dep = sc.nextInt();
+        boolean check = false;
+       
+        for(int i = 0; i < a.length; i++){
+            if(a[i].ano == sno){
+                a[i].abal = a[i].abal + dep;
+                check = true;
+                System.out.println("Balance Updated. New Balance = " + a[i].abal);
+                break;
+            }
+        }
+        if(check == false){
+            System.out.println("Account Number is invalid :( ");
+        }
+        System.out.println();
+    }
+
+    void case6(Acc [] a){
+        System.out.print("Enter Account Number : ");
+        int sno = sc.nextInt();
+        System.out.print("Enter Amount to be deposit : ");
+        int wit= sc.nextInt();
+        boolean check = false;
+
+        for(int i = 0; i < a.length; i++){
+            if(a[i].ano == sno){
+                if(a[i].abal >= wit){
+                    a[i].abal = a[i].abal - wit;
+                    check = true;
+                    System.out.println("Balance Updated. New Balance = " + a[i].abal);
+                }
+                else{
+                    System.out.println("Insufficient Balance : ");
+                }
+            }
+        }
+        if(check == false){
+            System.out.println("Account Number is invalid :( ");
+        }
+        System.out.println();
+    }
 }
 
 class Main{
