@@ -21,6 +21,7 @@ class Acc{
         System.out.println("Account Number : "+ano);
         System.out.println("Account Owner's Name : "+aname);
         System.out.println("Account Balance : "+abal);
+        System.out.println("Bank Name : " + bankname);
     }
 
     void case1(Acc [] a){
@@ -145,19 +146,17 @@ class Acc{
         Arrays.sort(balance);
 
         for(int i = balance.length - 1; i>balance.length-4; i--){
-			if(a[i].abal == balance[i]){
-				a[i].get();
-			}
-		}
+            if(a[i].abal == balance[i]){
+                a[i].get();
+            }
+        }
     }
 
     void case8(Acc [] a){
         System.out.println("Enter new Bank Name : ");
         sc.nextLine(); // Flush
-
         String newBankName = sc.nextLine();
         bankname = newBankName;
-
         System.out.println("Bank Name updated successfully to: " + bankname);
         System.out.println();
     }
@@ -166,6 +165,10 @@ class Acc{
 class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the Bank Name: ");
+        Acc.bankname = sc.nextLine();
+
         System.out.print("Enter no of Account in Bank :");
         int n = sc.nextInt();
 
