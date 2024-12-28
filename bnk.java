@@ -127,13 +127,38 @@ class Acc{
                     System.out.println("Balance Updated. New Balance = " + a[i].abal);
                 }
                 else{
-                    System.out.println("Insufficient Balance : ");
+                    System.out.println("Insufficient Balance :( ");
                 }
             }
         }
         if(check == false){
             System.out.println("Account Number is invalid :( ");
         }
+        System.out.println();
+    }
+
+    void case7(Acc [] a){
+        int [] balance = new int[a.length];
+        for(int i = 0; i<a.length; i++){
+            balance [i] = a[i].abal;
+        }
+        Arrays.sort(balance);
+
+        for(int i = balance.length - 1; i>balance.length-4; i--){
+			if(a[i].abal == balance[i]){
+				a[i].get();
+			}
+		}
+    }
+
+    void case8(Acc [] a){
+        System.out.println("Enter new Bank Name : ");
+        sc.nextLine(); // Flush
+
+        String newBankName = sc.nextLine();
+        bankname = newBankName;
+
+        System.out.println("Bank Name updated successfully to: " + bankname);
         System.out.println();
     }
 }
@@ -180,7 +205,8 @@ class Main{
                 case 6 : m.case6(a);break;
                 case 7 : m.case7(a);break;
                 case 8 : m.case8(a);break;
-                case 9 : m.case9(a);break;
+                case 9 : System.out.println("Bye Bye! Have a great time."); System.exit(0);break;
+                default: System.out.println("Invalid choice, please try again.");
             }
         }
     }
